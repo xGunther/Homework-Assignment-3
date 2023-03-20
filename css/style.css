@@ -59,11 +59,11 @@ body {
 }
 
 .hamburger-menu.is-active::after{
-    transform: rotate(-45deg) translate(6px, -9px);
+    transform: rotate(-45deg) translate(6.4px, -9px);
 }
 
 .hamburger-menu.is-active::before{
-    transform: rotate(45deg) translate(1px, 3px);
+    transform: rotate(45deg) translate(0px, 3px);
 }
 
 .hamburger-menu.is-active .hamburger-menu__bar{
@@ -111,12 +111,6 @@ body {
 .navigation__theater-logo{
     margin-left: .5em;
     width: 3.75em;
-}
-
-.login-icon{
-    margin: 70%;
-    width: 2.8125em;
-    position: absolute;
 }
 
 .login-link{
@@ -177,6 +171,7 @@ body {
     display: flex;
     align-items: center;
     background-color: black;
+    width: 100%;
     padding: 0;
     height: 4.4em;
     border-bottom: 1.5px solid white;
@@ -195,6 +190,11 @@ body {
     text-align: center;
 }
 
+.login-icon{
+    width: 2.8125em;
+    margin-left: auto;
+    margin-right: 5em;
+}
 @media(min-width: 933px){
     .hamburger-menu{
         display: none;
@@ -212,6 +212,9 @@ body {
         display: absolute;
     }
     .navigation--desktop .navigation__links{
+        display: none;
+    }
+    .navigation--desktop .navigation__list-item{
         display: none;
     }
 }
