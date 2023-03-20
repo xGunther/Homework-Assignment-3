@@ -5,6 +5,7 @@ const loginIcon = document.getElementsByClassName("login-icon")[0];
 const loginScreen = document.getElementsByClassName("login-wrapper")[0];
 const signUpLink = document.getElementsByClassName("sign-up-link")[0];
 const signUpScreen = document.getElementsByClassName("sign-up-wrapper")[0];
+const loginBackButton = document.getElementsByClassName("back-button")[0];
 
 hamburgerMenu.addEventListener("click", function(){
     hamburgerMenu.classList.toggle("is-active");
@@ -27,3 +28,4 @@ signUpLink.addEventListener("click", function(event){
     signUpScreen.classList.toggle("transformed");
     event.preventDefault();
 });
+

@@ -63,7 +63,7 @@ body {
 }
 
 .hamburger-menu.is-active::before{
-    transform: rotate(45deg) translate(1px, 3px);
+    transform: rotate(45deg) translate(0.5px, 3px);
 }
 
 .hamburger-menu.is-active .hamburger-menu__bar{
@@ -117,6 +117,7 @@ body {
     border: 2px solid white;
     border-radius: .5em;
 }
+
 .login-wrapper  h1{
     text-align: center;
     margin-top: 3em;
@@ -126,6 +127,7 @@ body {
     text-align: center;
     margin-top: 3em;
 }
+
 #submit{
     width: 20em;
     height: 4em; 
@@ -149,7 +151,7 @@ body {
     height: 70vh;
     text-align: center;
     padding-top: 1em;
-    transform: scale(0,0);
+    transform: scale(1,1);
     transform-origin: top;
     transition: transform 350ms ease-in-out;
     margin-top: 4.4em;
@@ -174,11 +176,6 @@ body {
     border-right: none;
 }
 
-.sign-up-background{
-    background-color: white;
-    width: 100%;
-    height: auto;
-}
 .sign-up-close{
     float: right;
     width: 4em;
@@ -206,12 +203,12 @@ body {
     text-align: center;
 }
 
-.login-icon{
+.login-icon, .login-icon-link{
     width: 2.8125em;
     margin-left: auto;
-    margin-right: 5em;
+    margin-right: 5em; 
 }
-@media(min-width: 933px){
+@media(min-width: 1021px){
     .hamburger-menu{
         display: none;
     }
@@ -223,7 +220,7 @@ body {
     }
 }
 
-@media(max-width: 932px){
+@media(max-width: 1020px){
     .navigation--desktop{
         display: absolute;
     }

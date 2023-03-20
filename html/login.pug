@@ -1,0 +1,30 @@
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, maximum-scale=1.0")
+        meta(name="description" content="Starlight Cinema, a movie theater in the located in Utrecht.")
+        title Starlight Cinema
+        link(rel="stylesheet", href="/css/login_and_signup.css")
+        link(rel="icon", href="/images/star_logo.png" type="image/icon")  
+        link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
+    body
+        article 
+            .login-wrapper
+                button.back-button
+                    a.back-button__link(href="/html/index.html")  
+                        i(class="fa-solid fa-angle-left")
+                h1 Login
+                form.login-wrapper__form(method="post")  
+                    div  
+                        ion-icon(name="person-sharp")       
+                        input#username(type="text" required placeholder="Username")   
+                    div
+                        ion-icon(name="lock-closed-sharp")
+                        input#password(type="password" name="password" minlength="8" required placeholder="Password")
+                    input#submit(type="submit" value="Login")
+                    p Not a member? 
+                        a.sign-up-link(href="/html/signup.html") Sign up
+        script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+        script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js") 
+        script(src="https://kit.fontawesome.com/a4720b20e9.js" crossorigin="anonymous")
+        script(src="/js/main.js")  

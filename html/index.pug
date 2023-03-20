@@ -5,7 +5,7 @@ html
         meta(name="viewport" content="width=device-width, maximum-scale=1.0")
         meta(name="description" content="Starlight Cinema, a movie theater in the located in Utrecht.")
         title Starlight Cinema
-        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="/css/main.css")
         link(rel="icon", href="/images/star_logo.png" type="image/icon")  
         link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
     body
@@ -21,8 +21,9 @@ html
                 li.navigation__list-item
                     a.navigation__links(href="http://") Contact
                 li.navigation__list-item
-                    a.login-link.navigation__links(href="http://") Login
-            img.login-icon(src="/images/login_icon.png", alt="Login Icon")
+                    a.login-link.navigation__links(href="/html/login.html") Login
+            a.login-icon-link(href="/html/login.html")
+                img.login-icon(src="/images/login_icon.png", alt="Login Icon")
         nav.navigation.navigation--mobile
             ul.navigation__list 
                 li.navigation__list-item
@@ -35,35 +36,7 @@ html
                     a.navigation__links(href="http://") Contact
         label.hamburger-menu
             span.hamburger-menu__bar
-        article 
-            .login-wrapper
-                h1 Login
-                form.login-wrapper__form(method="post")  
-                    div  
-                        ion-icon(name="person-outline")       
-                        input#username(type="text" required placeholder="Username")   
-                    div
-                        ion-icon(name="lock-closed-outline") 
-                        input#password(type="password" name="password" minlength="8" required placeholder="Password")
-                    input#submit(type="submit" value="Login")
-                    p Not a member? 
-                        a.sign-up-link(href="#") Sign up
-            .sign-up-background
-                .sign-up-wrapper
-                    h1 Sign up
-                    form.sign-up-wrapper__form(method="post")  
-                        div 
-                            input#signup-name(type="text" required placeholder="Full Name")
-                        div 
-                            
-                            input#signup-date-of-birth(type="date" required)
-                        div 
-                            input#signup-email(type="email" required placeholder="E-Mail")
-                        div        
-                            input#signup-username(type="text" required placeholder="Username")   
-                        div
-                            input#signup-password(type="password" name="password" minlength="8" required placeholder="Password")
-                        input#submit(type="submit" value="Sign up!")
+        article
         script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
         script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")
         script(src="/js/main.js")  
