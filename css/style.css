@@ -153,7 +153,7 @@ body {
     transform: scale(0,0);
     transform-origin: top;
     transition: transform 350ms ease-in-out;
-    margin-top: 5.45em;
+    margin-top: 4.3em;
 }
 
 .transformed{
