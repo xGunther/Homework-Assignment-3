@@ -1,0 +1,54 @@
+doctype html 
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, maximum-scale=1.0")
+        meta(name="description" content="Starlight Cinema, a movie theater in the located in Utrecht.")
+        title Starlight Cinema
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="icon", href="/images/star_logo.png" type="image/icon")  
+        link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
+    body
+        nav.navigation.navigation--desktop
+            img.navigation__theater-logo(src="/images/theater_logo.png", alt="Logo of the Starlight Cinema")
+            ul.navigation__list
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Home
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Location
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Ticket prizes
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Contact
+                li.navigation__list-item
+                    a.login-link.navigation__links(href="http://") Login
+            img.login-icon(src="/images/login_icon.png", alt="Login Icon")
+        nav.navigation.navigation--mobile
+            ul.navigation__list 
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Home
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Location
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Ticket prizes
+                li.navigation__list-item
+                    a.navigation__links(href="http://") Contact
+            
+        label.hamburger-menu
+            span.hamburger-menu__bar
+        .login-wrapper
+            h1 Login
+            form.login-wrapper__form(method="post")  
+                div  
+                    ion-icon(name="person-outline")       
+                    input#username(type="text" required placeholder="Username")   
+                div
+                    ion-icon(name="lock-closed-outline") 
+                    input#password(type="password" name="password" minlength="8" required placeholder="Password")
+                input#submit(type="submit" value="Login")
+                p Not a member? 
+                    a(href="#") Sign up
+        script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+        script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")
+        script(src="/js/main.js")  
+    footer
