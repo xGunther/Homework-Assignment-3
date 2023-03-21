@@ -96,7 +96,7 @@ body {
 }
 
 .back-button__link:hover{
-    color: gray;
+    color: rgba(255,0,0,0.4);
 }
 
 @media(max-width: 900px){
