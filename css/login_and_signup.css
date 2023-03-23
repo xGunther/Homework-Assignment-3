@@ -110,19 +110,23 @@ body {
 
 @media(max-height:847px){
     #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit{
-        height:  2em;
+        height: 2em;
         width: 10em;
     }
+    #submit{
+        height: 2.5em;
+    }
     .login-wrapper{
-        width: 30em;
+        width: 20em;
         margin-bottom: 2em;
         height: 70vh;
     }
     .sign-up-wrapper{
-        width: 30em;
+        width: 20em;
         margin-bottom: 2em;
         height: 70vh;
     }
+    
     .back-button{
         font-size: 2em;
     }
