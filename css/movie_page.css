@@ -8,7 +8,7 @@ body,html{
 }
 
 body {
-    background: linear-gradient(180deg, rgba(63, 171, 210, 1) 0%, rgba(32, 83, 102,1) 100%);
+    background: linear-gradient(180deg, rgb(100, 165, 189) 0%, rgb(13, 51, 65) 75%);
     font-family: "Montserrat";
     color: white;
     margin-bottom: 0;
@@ -18,9 +18,10 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4em;
+    margin-top: 5em;
     width: 80em;
     height: 45em;
+    border-radius: 1.5em;
 }
 
 .title-wrapper, .credits-wrapper, .description-wrapper{
@@ -317,6 +318,11 @@ dt, dd{
 @media(max-width: 407px){
     .description-wrapper{
         height: 38.5em;
+        transition: all 1s;
+    }
+    .trailer{
+        width: 17em;
+        height: 10em;
         transition: all 1s;
     }
 }
