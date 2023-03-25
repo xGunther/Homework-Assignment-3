@@ -5,14 +5,5 @@ const db = new sqlite3.Database("db/movie_theater.sqlite", sqlite3.OPEN_READWRIT
     if (err) return console.error(err.message);
 });
 
-db.all('SELECT description FROM movies', (err, rows) => {
-    if (err) {
-      console.error(err.message);
-    } else {
-      rows.forEach(row => {
-        
-      });
-    }
-  });
-
+// close the database connection
 db.close();
