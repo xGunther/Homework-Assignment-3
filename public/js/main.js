@@ -1,7 +1,8 @@
 const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 const mobileNavigation = document.getElementsByClassName("navigation--mobile")[0];
 const moviePoster = document.getElementsByClassName("movie-card__poster");
-const movieHeader= document.getElementsByClassName("movie-card__header");
+const movieHeader = document.getElementsByClassName("movie-card__header");
+const pagination = document.getElementsByClassName("pagination__link")[1];
 
 hamburgerMenu.addEventListener("click", function(){
     hamburgerMenu.classList.toggle("is-active");
