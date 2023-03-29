@@ -175,7 +175,7 @@ body {
 
 .featured-background{
     margin-top: 4.4em;
-    height: 45em; 
+    height: 40em; 
     background:  linear-gradient(180deg, rgba(63, 171, 210, 1) 0%, rgba(32, 83, 102,1) 100%);
     overflow-y: hidden;
 }

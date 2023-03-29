@@ -4,7 +4,7 @@ const posterArray = Array.from(moviePosterIndex2);
 const headerArray = Array.from(movieHeaderIndex2);
 
 function fetchMovies() {
-  fetch("/movies-page-2")
+  fetch("movies-page-2")
     .then(response => response.json())
     .then(data => {
       for (let i = 0; i < posterArray.length; i++) {

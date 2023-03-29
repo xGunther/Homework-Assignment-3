@@ -9,18 +9,17 @@ class Movie{
         this.description = description;
         this.movieLength = movieLength;
     }
+    createElements(){
+        const movieHeader = document.createElement("h1");
+        const movieTrailer = document.createElement("iframe");
+        const movieDescription = document.createElement("p");
+        const movieData = document.createElement("dl");
+        const dataDescription = document.createElement("dd");
+        body.appendChild(movieHeader);
+        body.appendChild(movieTrailer);
+        body.appendChild(movieDescription);
+        body.appendChild(movieData);
+        body.appendChild(dataDescription);
+        body.appendChild(movieHeader); 
+    };
 }
-
-function createElements(){
-    const movieHeader = document.createElement("h1");
-    const movieTrailer = document.createElement("iframe");
-    const movieDescription = document.createElement("p");
-    const movieData = document.createElement("dl");
-    const dataDescription = document.createElement("dd");
-    body.appendChild(movieHeader);
-    body.appendChild(movieTrailer);
-    body.appendChild(movieDescription);
-    body.appendChild(movieData);
-    body.appendChild(dataDescription);
-    body.appendChild(movieHeader);
-};

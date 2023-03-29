@@ -1,15 +1,26 @@
 const express = require("express");
 const app = express();
 const port = 8058;
-const mime = require('mime');
-const sqlite3 = require('sqlite3').verbose();
+const mime = require("mime");
+const sqlite3 = require("sqlite3").verbose();
+
+
+app.get("/html", function(req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+//loading the static files
+app.use(express.static("index.html"));
+app.use(express.static("html"));
+app.use(express.static("public"));
+
 
 // Opening a connection to the sqlite file
-const db = new sqlite3.Database('public/db/movie_theater.sqlite', err => {
+const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
   if (err) {
     console.error(err.message);
   } else {
-    console.log('Connected to the database file.');
+    console.log("Connected to the database file.");
   }
 });
 
@@ -35,15 +46,6 @@ app.get("/movies-page-2", (req, res) => {
     }
     res.json(rows);
   });
-});
-
-
-//loading the static files
-app.use(express.static("html"));
-app.use(express.static("public"));
-
-app.get('/html', function(req, res) {
-  res.sendFile(__dirname + "/index.html");
 });
 
 //making sure that it is listening to the right port
