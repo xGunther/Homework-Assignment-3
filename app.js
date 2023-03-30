@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const port = 8058;
-const mime = require("mime");
 const sqlite3 = require("sqlite3").verbose();
 
 
@@ -39,6 +38,18 @@ app.get("/movies-page-1", (req, res) => {
 app.get("/movies-page-2", (req, res) => {
   //getting the movie name and poster for the second homepage
   db.all("SELECT movie_name, poster FROM movies LIMIT 10 OFFSET 10", (err, rows) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+app.get("/movie-description-pages", (req, res) => {
+  //getting the movie name and poster for the second homepage
+  db.all("SELECT movie_name, director, actors, genre, length, release_year, description, trailer FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");

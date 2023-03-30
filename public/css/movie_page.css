@@ -38,6 +38,10 @@ body {
 .title-wrapper{
     display: flex;
     justify-content: space-between;
+    -moz-box-shadow: 0 0 50px #fff;
+    -webkit-box-shadow: 0 0 50px #fff;
+    box-shadow: 0px 0px 30px #fff;
+    margin-bottom: 4em;
 }
 
 button{
@@ -58,11 +62,18 @@ button:hover{
 
 .credits-wrapper{
     height: 25em;
+    -moz-box-shadow: 0 0 50px #fff;
+    -webkit-box-shadow: 0 0 50px #fff;
+    box-shadow: 0px 0px 30px #fff;
+    margin-bottom: 4em;
 }
 
 .description-wrapper{
     height: 20em;
     margin-bottom: 6em;
+    -moz-box-shadow: 0 0 50px #fff;
+    -webkit-box-shadow: 0 0 50px #fff;
+    box-shadow: 0px 0px 30px #fff;
 }
 
 .title-wrapper__heading{
@@ -107,7 +118,7 @@ dt, dd{
     justify-content: space-between;
     width: 2.625em;
     height: 2em;
-    z-index: 3;  
+    z-index: 2;  
 
     appearance: none;
     background: none;

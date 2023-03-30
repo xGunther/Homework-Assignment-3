@@ -2,7 +2,6 @@ const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 const mobileNavigation = document.getElementsByClassName("navigation--mobile")[0];
 const moviePoster = document.getElementsByClassName("movie-card__poster");
 const movieHeader = document.getElementsByClassName("movie-card__header");
-const pagination = document.getElementsByClassName("pagination__link")[1];
 
 hamburgerMenu.addEventListener("click", function(){
     hamburgerMenu.classList.toggle("is-active");
@@ -19,3 +18,11 @@ for (let i = 0; i < moviePoster.length; i++) {
         movieHeader[i].classList.toggle("transform");
     });
 }
+for (let i = 0; i < moviePoster.length; i++) {
+    moviePoster[i].addEventListener("click", (event) => {
+        //Getting the ID of the clicked movie so the proper page can be rendered
+        let movieId = event.target.id;
+        localStorage.setItem("movieId", movieId);
+        window.location.href = "movie_description.html";
+    })      
+};
