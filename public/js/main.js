@@ -22,7 +22,6 @@ for (let i = 0; i < moviePoster.length; i++) {
     moviePoster[i].addEventListener("click", (event) => {
         //Getting the ID of the clicked movie so the proper page can be rendered
         let movieId = event.target.id;
-        localStorage.setItem("movieId", movieId);
-        window.location.href = "movie_description.html";
+        window.location.href = "movie_description.html?id=" + movieId;
     })      
 };

@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const port = 8058;
 const sqlite3 = require("sqlite3").verbose();
+const morgan = require("morgan");
 
+app.use(morgan(":method :url :status :res[content-length] - :response-time ms :date[web]"));
 
+//loading the index.html file as the home url
 app.get("/html", function(req, res) {
   res.sendFile(__dirname + "/index.html");
 });
@@ -25,7 +28,7 @@ const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
 
 app.get("/movies-page-1", (req, res) => {
   //getting the movie name and poster for the homepage
-  db.all("SELECT movie_name, poster FROM movies", (err, rows) => {
+  db.all("SELECT movie_id, movie_name, poster FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");
@@ -37,7 +40,7 @@ app.get("/movies-page-1", (req, res) => {
 
 app.get("/movies-page-2", (req, res) => {
   //getting the movie name and poster for the second homepage
-  db.all("SELECT movie_name, poster FROM movies LIMIT 10 OFFSET 10", (err, rows) => {
+  db.all("SELECT movie_id, movie_name, poster FROM movies LIMIT 10 OFFSET 10", (err, rows) => {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");

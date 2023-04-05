@@ -1,88 +1,89 @@
 let movieIdPlusOne;
 let i;
-let movieId = localStorage.getItem("movieId");
+let movieId = new URL(window.location).searchParams.get("id");
+
 
 function fetchMovieDescriptions() {
     fetch("movie-description-pages")
         .then(response => response.json())
         .then(data => {
-            if(movieId == "id1"){
+            if(movieId == "1"){
                 i = 0;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id2"){
+            else if(movieId == "2"){
                 i = 1;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id3"){
+            else if(movieId == "3"){
                 i = 2;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id4"){
+            else if(movieId == "4"){
                 i = 3;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id5"){
+            else if(movieId == "5"){
                 i = 4;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id6"){
+            else if(movieId == "6"){
                 i = 5;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id7"){
+            else if(movieId == "7"){
                 i = 6;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id8"){
+            else if(movieId == "8"){
                 i = 7;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id9"){
+            else if(movieId == "9"){
                 i = 8;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id10"){
+            else if(movieId == "10"){
                 i = 9;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id11"){
+            else if(movieId == "11"){
                 i = 10;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id12"){
+            else if(movieId == "12"){
                 i = 11;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id13"){
+            else if(movieId == "13"){
                 i = 12;
                 movieIdPlusOne = i + 1;
             }    
-            else if(movieId == "id14"){
+            else if(movieId == "14"){
                 i = 13;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id15"){
+            else if(movieId == "15"){
                 i = 14;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id16"){
+            else if(movieId == "16"){
                 i = 15;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id17"){
+            else if(movieId == "17"){
                 i = 16;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id18"){
+            else if(movieId == "18"){
                 i = 17;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id19"){
+            else if(movieId == "19"){
                 i = 18;
                 movieIdPlusOne = i + 1;
             }
-            else if(movieId == "id20"){
+            else if(movieId == "20"){
                 i = 19;
                 movieIdPlusOne = i + 1;
             } 
@@ -143,9 +144,9 @@ function fetchMovieDescriptions() {
                 });
             }
         })
-            .catch(err => {
-                console.error(err);
-            });
+        .catch(err => {
+            console.error(err);
+        });
             
 }
 document.addEventListener("DOMContentLoaded", () => {

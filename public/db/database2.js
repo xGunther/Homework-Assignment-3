@@ -8,7 +8,8 @@ function fetchMovies() {
     .then(response => response.json())
     .then(data => {
       for (let i = 0; i < posterArray.length; i++) {
-        moviePosterIndex2[i].setAttribute('src', data[i].poster);
+        moviePosterIndex2[i].setAttribute("src", data[i].poster);
+        moviePosterIndex2[i].setAttribute("id", data[i].movie_id);
         movieHeaderIndex2[i].textContent = data[i].movie_name;
       }
     })

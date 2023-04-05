@@ -1,0 +1,29 @@
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, maximum-scale=1.0")
+        meta(name="description" content="Starlight Cinema, a movie theater in the located in Utrecht.")
+        title Seaside Cinema
+        link(rel="stylesheet", href="css/information.css")
+        link(rel="icon", href="images/logo.png" type="image/icon")  
+        link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
+        include nav.pug
+    body
+        article 
+            .user-information-wrapper
+                dl.account-details
+                    dt Name
+                    dd Eden Hazard
+                    dt Username
+                    dd SkylarSky
+                    dt Email-Address
+                    dd pixelpenguin47@example.com
+                    dt Credit Card Information
+                    dd VISA, 4556208672135430, 6/2027, 713
+                    dt Date Of Birth
+                    dd 31-10-1990
+                button Order History
+        script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+        script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js") 
+        script(src="https://kit.fontawesome.com/a4720b20e9.js" crossorigin="anonymous")
+        script(src="js/main.js")
