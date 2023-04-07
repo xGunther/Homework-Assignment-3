@@ -92,8 +92,6 @@ app.get("/movie_times", (req, res) => {
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
-      res.status(500).send("Internal server error");
-      return;
     }
     console.log("Connected to the database file.");
   });
@@ -114,7 +112,7 @@ app.get("/movie_times", (req, res) => {
   });
 });
 
-//making sure that it is listening to the right port
+//making sure that it is listening to our port
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`App listening on ${port}`)
 });
