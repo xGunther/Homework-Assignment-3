@@ -20,6 +20,8 @@ app.get("/movies-page-1", (req, res) => {
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     console.log("Connected to the database file.");
   });
@@ -27,6 +29,8 @@ app.get("/movies-page-1", (req, res) => {
   db.all("SELECT movie_id, movie_name, poster FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     res.json(rows);
 
@@ -44,6 +48,8 @@ app.get("/movies-page-2", (req, res) => {
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     console.log("Connected to the database file.");
   });
@@ -51,6 +57,8 @@ app.get("/movies-page-2", (req, res) => {
   db.all("SELECT movie_id, movie_name, poster FROM movies LIMIT 10 OFFSET 10", (err, rows) => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     res.json(rows);
 
@@ -68,6 +76,8 @@ app.get("/movie-description-pages", (req, res) => {
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     console.log("Connected to the database file.");
   });
@@ -75,6 +85,8 @@ app.get("/movie-description-pages", (req, res) => {
   db.all("SELECT movie_name, director, actors, genre, length, release_year, description, trailer FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     res.json(rows);
 
@@ -92,6 +104,8 @@ app.get("/movie_times", (req, res) => {
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     console.log("Connected to the database file.");
   });
@@ -99,6 +113,8 @@ app.get("/movie_times", (req, res) => {
   db.all("SELECT time_one, time_two FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
     }
     res.json(rows);
 
