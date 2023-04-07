@@ -16,49 +16,101 @@ app.use(express.static("index.html"));
 app.use(express.static("html"));
 app.use(express.static("public"));
 
-
-// Opening a connection to the sqlite file
-const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
-  if (err) {
-    console.error(err.message);
-  } else {
-    console.log("Connected to the database file.");
-  }
-});
-
 app.get("/movies-page-1", (req, res) => {
-  //getting the movie name and poster for the homepage
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the database file.");
+  });
+
   db.all("SELECT movie_id, movie_name, poster FROM movies", (err, rows) => {
     if (err) {
       console.error(err.message);
-      res.status(500).send("Internal server error");
-      return;
     }
     res.json(rows);
+
+    db.close(err => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        console.log("Database connection is closed.");
+      }
+    });
   });
 });
 
 app.get("/movies-page-2", (req, res) => {
-  //getting the movie name and poster for the second homepage
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the database file.");
+  });
+
   db.all("SELECT movie_id, movie_name, poster FROM movies LIMIT 10 OFFSET 10", (err, rows) => {
     if (err) {
       console.error(err.message);
-      res.status(500).send("Internal server error");
-      return;
     }
     res.json(rows);
+
+    db.close(err => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        console.log("Database connection is closed.");
+      }
+    });
   });
 });
 
 app.get("/movie-description-pages", (req, res) => {
-  //getting the movie name and poster for the second homepage
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the database file.");
+  });
+
   db.all("SELECT movie_name, director, actors, genre, length, release_year, description, trailer FROM movies", (err, rows) => {
+    if (err) {
+      console.error(err.message);
+    }
+    res.json(rows);
+
+    db.close(err => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        console.log("Database connection is closed.");
+      }
+    });
+  });
+});
+
+app.get("/movie_times", (req, res) => {
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");
       return;
     }
+    console.log("Connected to the database file.");
+  });
+
+  db.all("SELECT time_one, time_two FROM movies", (err, rows) => {
+    if (err) {
+      console.error(err.message);
+    }
     res.json(rows);
+
+    db.close(err => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        console.log("Database connection is closed.");
+      }
+    });
   });
 });
 
@@ -66,4 +118,3 @@ app.get("/movie-description-pages", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
-
