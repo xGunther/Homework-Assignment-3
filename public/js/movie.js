@@ -2,16 +2,21 @@ let movieIdPlusOne;
 let i;
 let movieId = new URL(window.location).searchParams.get("id");
 
+//Fetching data that has been sent to the movie-description-page endpoint.
 function fetchMovieDescriptions() {
     fetch("movie-description-pages")
         .then(response => response.json())
         .then(data => {
+            //looping through the value j, if the value j is the same as the clicked movie the variable i will be lowered by one.
             for (let j = 0; j < 20; j++) {
                 if (j == movieId) {
                     i = movieId - 1;
                     movieIdPlusOne = i + 1;
+                    break;
                 }
             }
+            /*the variable i has been properly handled by the previous for loop to only perform the for loop for the movie that has been clicked on the homepage.
+            Furthermore, DOM methods are used to render the right movie description page for the clicked movie.*/
             for (i; i < movieIdPlusOne; i++) {
                 const movieData = [
                     {term: "Director", definition: data[i].director},

@@ -3,11 +3,13 @@ const mobileNavigation = document.getElementsByClassName("navigation--mobile")[0
 const moviePoster = document.getElementsByClassName("movie-card__poster");
 const movieHeader = document.getElementsByClassName("movie-card__header");
 
+//adding classes to the hamburger menu to transform it to a cross when clicked.
 hamburgerMenu.addEventListener("click", function(){
     hamburgerMenu.classList.toggle("is-active");
     mobileNavigation.classList.toggle("transformed");
 });
 
+//addding a blur effect to each poster when entering with your mouse, if the mouse leaves the blur goes away.
 for (let i = 0; i < moviePoster.length; i++) {
     moviePoster[i].addEventListener("mouseover", function(event){
         moviePoster[i].classList.toggle("blur");
@@ -18,6 +20,8 @@ for (let i = 0; i < moviePoster.length; i++) {
         movieHeader[i].classList.toggle("transform");
     });
 }
+
+//adding an evenlistener to each poster. When the poster is clicked the id of the poster is saved in the url of the movie description page so it can load the right movie.
 for (let i = 0; i < moviePoster.length; i++) {
     moviePoster[i].addEventListener("click", (event) => {
         //Getting the ID of the clicked movie so the proper page can be rendered
