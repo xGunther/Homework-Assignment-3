@@ -3,6 +3,21 @@ const app = express();
 const port = 8058;
 const sqlite3 = require("sqlite3").verbose();
 const morgan = require("morgan");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// setting up the session
+app.use(
+  session({
+    secret: "secret-key",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }, // 24 hours
+  })
+);
 
 //making a logger that will log the req method, req url, status, content-length, res time and date.
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms :date[web]"));
@@ -134,6 +149,91 @@ app.get("/movie_times", (req, res) => {
         console.log("Database connection is closed.");
       }
     });
+  });
+});
+
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+  });
+
+  db.get("SELECT * FROM users WHERE username = ?", [username], async (err, row) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+
+    if (!row) {
+      res.status(401).send("Incorrect username or password");
+    } else {
+      const passwordMatch = await bcrypt.compare(password, row.password);
+      if (passwordMatch) {
+        req.session.user = {
+          id: row.id,
+          username: row.username,
+          email: row.email,
+          name: row.name,
+          address: row.address,
+          creditCard: row.credit_card,
+        };
+        res.send("Logged in");
+      } else {
+        res.status(401).send("Incorrect username or password");
+      }
+    }
+
+    db.close();
+  });
+});
+
+
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Internal server error");
+    } else {
+      res.send("Logged out");
+    }
+  });
+});
+
+
+app.post("/signup", async (req, res) => {
+  const { name, dateOfBirth, email, username, password } = req.body;
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+  });
+
+  const query = `
+    INSERT INTO users (name, date_of_birth, email, username, password)
+    VALUES (?, ?, ?, ?, ?)
+  `;
+
+  db.run(query, [name, dateOfBirth, email, username, hashedPassword], function (err) {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+
+    res.send("User registered");
+    db.close();
   });
 });
 
