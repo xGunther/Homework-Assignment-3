@@ -210,7 +210,7 @@ app.get("/logout", (req, res) => {
 app.post("/signup", async (req, res) => {
   const { name, dateOfBirth, email, username, password } = req.body;
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const Password = password;
 
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
     if (err) {
@@ -220,12 +220,13 @@ app.post("/signup", async (req, res) => {
     }
   });
 
+
   const query = `
     INSERT INTO users (name, date_of_birth, email, username, password)
     VALUES (?, ?, ?, ?, ?)
   `;
 
-  db.run(query, [name, dateOfBirth, email, username, hashedPassword], function (err) {
+  db.run(query, [name, dateOfBirth, email, username, Password], function (err) {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");
