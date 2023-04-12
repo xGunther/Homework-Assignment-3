@@ -54,7 +54,7 @@ body {
     margin-top: 5em;
 }
 
-#username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email{
+#username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #movie, #movie-time, #ticket-quantity{
     padding: 0 5px;
     height: 40px;
     margin: 1em;
@@ -100,7 +100,7 @@ body {
 }
 
 @media(max-width: 900px){
-    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit{
+    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit, #movie, #movie-time, #ticket-quantity{
         width: 17em;
     }
     .login-wrapper, .sign-up-wrapper{
@@ -109,7 +109,7 @@ body {
 }
 
 @media(max-height:847px){
-    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit{
+    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit, #movie, #movie-time, #ticket-quantity{
         height: 2em;
         width: 10em;
     }
@@ -154,7 +154,7 @@ body {
     }
 }
 @media(max-width:350px) {
-    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit{
+    #username, #password, #signup-username, #signup-password, #signup-date-of-birth, #signup-name, #signup-email, #submit, #movie, #movie-time, #ticket-quantity{
         width: 11em;
     }
     .sign-up-wrapper{

@@ -123,7 +123,7 @@ app.get("/movie-description-pages", (req, res) => {
 });
 
 //getting the movie_times endpoint and sending the queried data in json to this endpoint.
-app.get("/movie_times", (req, res) => {
+app.get("/movie-times", (req, res) => {
   //opening the database connection.
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", err => {
     if (err) {
