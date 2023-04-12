@@ -44,7 +44,7 @@ body {
     margin-bottom: 4em;
 }
 
-button{
+.buy-button{
     margin-right: 4em;
     height: 4em;
     border-radius: 1em;
@@ -56,7 +56,8 @@ button{
     color: white;    
     font-family: "Montserrat";
 }
-button:hover{
+
+.buy-button:hover{
     background-color: rgba(63, 171, 210, 1);
 }
 

@@ -14,27 +14,28 @@
       <div class="sign-up-wrapper">
         <button class="back-button"><a class="back-button__link" href="index.html"> <i class="fa-solid fa-angle-left"></i></a></button>
         <h1>Sign up</h1>
-        <form class="sign-up-wrapper__form" action="/signup" method="post"> 
+        <form class="sign-up-wrapper__form" method="post"> 
           <div> 
-            <input id="signup-name" name="name" type="text" required="required" placeholder="Full Name" />
+            <input id="signup-name" type="text" required="required" placeholder="Full Name"/>
           </div>
           <div> 
-            <input id="signup-date-of-birth" name="dateOfBirth" type="date" required="required" max="2023-04-01" />
+            <input id="signup-date-of-birth" type="date" required="required" max="01-04-2023"/>
           </div>
           <div> 
-            <input id="signup-email" name="email" type="email" required="required" placeholder="E-Mail" />
+            <input id="signup-email" type="email" required="required" placeholder="E-Mail"/>
           </div>
           <div>       
-            <input id="signup-username" name="username" type="text" required="required" placeholder="Username" />
+            <input id="signup-username" type="text" required="required" placeholder="Username"/>
           </div>
           <div>
-            <input id="signup-password" name="password" type="password" minlength="8" required="required" placeholder="Password" />
+            <input id="signup-password" type="password" name="password" minlength="8" required="required" placeholder="Password"/>
           </div>
           <input id="submit" type="submit" value="Sign up!"/>
           <p>Already have an account? <a class="sign-in-link" href="login.html">Sign in</a></p>
         </form>
       </div>
     </article>
-   <script src="signup.js"> </script>
+    <script src="https://kit.fontawesome.com/a4720b20e9.js" crossorigin="anonymous"></script>
+    <script src="signup.js"></script>
   </body>
 </html>

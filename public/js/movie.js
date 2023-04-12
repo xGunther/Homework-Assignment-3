@@ -52,6 +52,7 @@ function fetchMovieDescriptions() {
                 movieTrailer.setAttribute("src", data[i].trailer);
                 movieDescription.textContent = data[i].description;
                 buyTicketsButton.textContent = "Buy Tickets!";
+                buyTicketsButton.classList.add("buy-button");
                 movieTrailer.classList.add("trailer");
                 titleWrapper.classList.add("title-wrapper");
                 movieHeader.classList.add("title-wrapper__heading");
@@ -61,6 +62,10 @@ function fetchMovieDescriptions() {
                 descriptionWrapper.classList.add("description-wrapper");
                 descriptionHeader.classList.add("description-wrapper__heading");
                 movieDescription.classList.add("movie-description");
+                // Add event listener to the buyButton element
+                buyTicketsButton.addEventListener("click", function(){
+                window.location.href = "order.html";
+                });
                 
                 movieData.forEach(data => {
                     const dataDescriptionTerm = document.createElement("dt");
@@ -82,3 +87,4 @@ function fetchMovieDescriptions() {
 document.addEventListener("DOMContentLoaded", () => {
         fetchMovieDescriptions();
 });
+
