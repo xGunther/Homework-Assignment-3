@@ -14,6 +14,14 @@ body {
     margin-bottom: 0;
 }
 
+.login-link{
+    border: 2px solid white;
+    border-radius: .5em;
+    margin-left: 3em; 
+    color: white;
+    transition: color .5s;
+}
+
 .trailer{
     display: block;
     margin-left: auto;
