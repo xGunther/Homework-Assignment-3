@@ -11,7 +11,7 @@ hamburgerMenu.addEventListener("click", () => {
 });
 
 //addding a blur effect to each poster when entering with your mouse, if the mouse leaves the blur goes away.
-for (i = 0; i < moviePoster.length; i++) {
+for (let i = 0; i < moviePoster.length; i++) {
     moviePoster[i].addEventListener("mouseover", () => {
         moviePoster[i].classList.toggle("blur");
         movieHeader[i].classList.toggle("transform");
