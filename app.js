@@ -171,23 +171,18 @@ app.post("/login", (req, res) => {
       return;
     }
 
-    if (!row) {
+    if (!row || row.password !== password) {
       res.status(401).send("Incorrect username or password");
     } else {
-      const passwordMatch = await bcrypt.compare(password, row.password);
-      if (passwordMatch) {
-        req.session.user = {
-          id: row.id,
-          username: row.username,
-          email: row.email,
-          name: row.name,
-          address: row.address,
-          creditCard: row.credit_card,
-        };
-        res.send("Logged in");
-      } else {
-        res.status(401).send("Incorrect username or password");
-      }
+      req.session.user = {
+        id: row.id,
+        username: row.username,
+        email: row.email,
+        name: row.name,
+        address: row.address,
+        creditCard: row.credit_card,
+      };
+      res.send("Logged in");
     }
 
     db.close();
@@ -210,8 +205,6 @@ app.get("/logout", (req, res) => {
 app.post("/signup", async (req, res) => {
   const { name, dateOfBirth, email, username, password } = req.body;
 
-  const Password = password;
-
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
     if (err) {
       console.error(err.message);
@@ -222,11 +215,11 @@ app.post("/signup", async (req, res) => {
 
 
   const query = `
-    INSERT INTO users (name, date_of_birth, email, username, password)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO users (full_name, date_of_birth, email, username, password)
+    VALUES (?, ?, ?, ?, ?, ?)
   `;
 
-  db.run(query, [name, dateOfBirth, email, username, Password], function (err) {
+  db.run(query, [name, dateOfBirth, email, username, password], function (err) {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");

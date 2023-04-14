@@ -15,7 +15,7 @@ document.querySelector(".login-wrapper__form").addEventListener("submit", async 
   
       if (response.ok) {
         alert("Logged in!");
-        window.location.href = ""; // redirects to x page after succesfull login
+        window.location.href = "/dashboard.html"; // redirects to x page after succesfull login
       } else {
         const message = await response.text();
         alert(message);

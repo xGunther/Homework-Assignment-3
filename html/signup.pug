@@ -14,18 +14,18 @@ html(lang="en")
                 a.back-button__link(href="index.html")  
                     i(class="fa-solid fa-angle-left")
                 h1 Sign up
-                form.sign-up-wrapper__form(method="post")  
+                form.sign-up-wrapper__form(method="post" action="/signup")  
                     div 
                         input#signup-name(type="text" required placeholder="Full Name")
                     div 
                             
-                        input#signup-date-of-birth(type="date" required max="2023-04-16")
+                        input#signup-date-of-birth(type="date" name="dateOfBirth" required max="2023-04-16")
                     div 
-                        input#signup-email(type="email" required placeholder="E-Mail")
+                        input#signup-email(type="email" name="email" required placeholder="E-Mail")
                     div 
-                        input#signup-credit-card(type="number" required placeholder="Credit Card Number")
+                        input#signup-credit-card(type="number" name="creditCard" required placeholder="Credit Card Number")
                     div        
-                        input#signup-username(type="text" required placeholder="Username")   
+                        input#signup-username(type="text" name="username" required placeholder="Username")   
                     div
                         input#signup-password(type="password" name="password" minlength="8" required placeholder="Password")
                     input#submit(type="submit" value="Sign up!")

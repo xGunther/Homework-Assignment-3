@@ -10,7 +10,7 @@ document.querySelector(".sign-up-wrapper__form").addEventListener("submit", asyn
   const data = { name, dateOfBirth, email, username, password };
 
   try {
-    const response = await fetch("/register", {
+    const response = await fetch("/signup", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
@@ -18,7 +18,7 @@ document.querySelector(".sign-up-wrapper__form").addEventListener("submit", asyn
 
     if (response.ok) {
       alert("User registered!");
-      window.location.href = "/login.html";
+      window.location.href = "/dashboard.html";
     } else {
       const message = await response.text();
       alert(message);

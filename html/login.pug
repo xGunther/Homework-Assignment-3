@@ -14,10 +14,10 @@ html(lang="en")
                 a.back-button__link(href="index.html")
                     i(class="fa-solid fa-angle-left")
                 h1 Login
-                form.login-wrapper__form(method="post")  
+                form.login-wrapper__form(method="post" action="/login")
                     div  
                         ion-icon(name="person-sharp")       
-                        input#username(type="text" required placeholder="Username")   
+                        input#username(type="text" name="username" required placeholder="Username")   
                     div
                         ion-icon(name="lock-closed-sharp")
                         input#password(type="password" name="password" minlength="8" required placeholder="Password")
