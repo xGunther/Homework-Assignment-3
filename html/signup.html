@@ -13,21 +13,24 @@
     <article> 
       <div class="sign-up-wrapper"><a class="back-button__link" href="index.html"> <i class="fa-solid fa-angle-left"></i></a>
         <h1>Sign up</h1>
-        <form class="sign-up-wrapper__form" method="post"> 
+        <form class="sign-up-wrapper__form" method="post" action="/signup">
           <div> 
-            <input id="signup-name" type="text" required placeholder="Full Name">
+            <input id="signup-first-name" type="text" name="firstName" required placeholder="First Name">
           </div>
           <div> 
-            <input id="signup-date-of-birth" type="date" required max="2023-04-16">
+            <input id="signup-last-name" type="text" name="lastName" required placeholder="Last Name">
           </div>
           <div> 
-            <input id="signup-email" type="email" required placeholder="E-Mail">
+            <input id="signup-date-of-birth" type="date" name="dateOfBirth" required max="2023-04-16">
           </div>
           <div> 
-            <input id="signup-credit-card" type="number" required placeholder="Credit Card Number">
+            <input id="signup-email" type="email" name="email" required placeholder="E-Mail">
+          </div>
+          <div> 
+            <input id="signup-credit-card" type="number" name="creditCard" required placeholder="Credit Card Number">
           </div>
           <div>       
-            <input id="signup-username" type="text" required placeholder="Username">
+            <input id="signup-username" type="text" name="username" required placeholder="Username">
           </div>
           <div>
             <input id="signup-password" type="password" name="password" minlength="8" required placeholder="Password">
