@@ -1,5 +1,5 @@
 Group: Group 58
-Authors: Kevin Hu(), Ingmar janson(), Gun Chen(2818531) 
+Authors: Kevin Hu(), Ingmar janson(0010499), Gun Chen(2818531) 
 Link to webpage: http://webtech.science.uu.nl/group58/
 Website and file structure explanation:
 
@@ -37,10 +37,9 @@ We used the following statements to create our sqlite database:
     username TEXT NOT NULL, 
     email_address TEXT NOT NULL, 
     password TEXT NOT NULL, 
-    first_name TEXT NOT NULL, 
-    last_name TEXT NOT NULL, 
     date_of_birth TEXT NOT NULL,
-    credit_card_information TEXT NOT NULL
+    full_name TEXT NOT NULL,
+    credit_card INTEGER NOT NULL
     );
 
     CREATE TABLE orders(
