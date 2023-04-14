@@ -1,5 +1,5 @@
 Group: Group 58
-Authors: Kevin Hu(), Ingmar janson(0010499), Gun Chen(2818531) 
+Authors: Kevin Hu(7548680), Ingmar janson(0010499), Gun Chen(2818531) 
 Link to webpage: http://webtech.science.uu.nl/group58/
 Website and file structure explanation:
 
