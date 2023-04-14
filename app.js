@@ -215,8 +215,8 @@ app.post("/signup", async (req, res) => {
 
 
   const query = `
-    INSERT INTO users (full_name, date_of_birth, email, username, password)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO users (full_name, date_of_birth, email_address, username, password)
+    VALUES (?, ?, ?, ?, ?)
   `;
 
   db.run(query, [name, dateOfBirth, email, username, password], function (err) {
