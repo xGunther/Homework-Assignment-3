@@ -16,7 +16,7 @@ body{
     height: 100vh;
 }
 
-.login-wrapper  h1, .sign-up-wrapper h1{
+.login-wrapper h1, .sign-up-wrapper h1{
     text-align: center;
     margin-top: 3em;
     margin-bottom: .5em;
@@ -80,21 +80,14 @@ body{
     color: white;
 }
 
-.back-button{
+.back-button__link{    
     font-size: 3em;
     width: 1.5em;
     height: 1.5em;
     float: left;
-    margin-top: -.2em;
+    margin-top: -.1em;
     color: white;
-
-    appearance: none;
-    background: none;
-    outline: none;
-    border: none;
-}
-.back-button__link{
-   transition: color .5s ease-in-out; 
+    transition: color .5s ease-in-out; 
 }
 
 .back-button__link:visited{
@@ -135,10 +128,6 @@ body{
     
     .back-button{
         font-size: 2em;
-    }
-    .login-wrapper  h1, .sign-up-wrapper h1{
-        text-align: center;
-        margin-top: 2.5em;
     }
 }
 

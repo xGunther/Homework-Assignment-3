@@ -1,7 +1,6 @@
 const moviePosterIndex2 = document.getElementsByClassName("movie-card__poster");
 const movieHeaderIndex2  = document.getElementsByClassName("movie-card__header");
 const posterArray = Array.from(moviePosterIndex2);
-const headerArray = Array.from(movieHeaderIndex2);
 
 //Fetching data that has been sent to the movies-page-2 endpoint.
 function fetchMovies() {

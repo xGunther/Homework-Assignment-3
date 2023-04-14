@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <meta name="description" content="Starlight Cinema, a movie theater in the located in Utrecht.">
     <title>Seaside Cinema</title>
     <link rel="stylesheet" href="css/information.css">
     <link rel="icon" href="images/logo.png" type="image/icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+  <body>
     <nav class="navigation navigation--desktop"><a href="index.html"> <img class="navigation__theater-logo" src="images/logo.png" alt="Logo of the Starlight Cinema"></a>
       <ul class="navigation__list">
         <li class="navigation__list-item"><a class="navigation__links" href="/">Home</a><a class="login-link navigation__links" href="login.html">Login</a></li>
@@ -19,25 +21,22 @@
       </ul>
     </nav>
     <label class="hamburger-menu"><span class="hamburger-menu__bar"></span></label>
-  </head>
-  <body>
-    <article> 
-      <div class="user-information-wrapper">
-        <dl class="account-details">
-          <dt>Name</dt>
-          <dd>Eden Hazard</dd>
-          <dt>Username</dt>
-          <dd>SkylarSky</dd>
-          <dt>Email-Address</dt>
-          <dd>pixelpenguin47@example.com</dd>
-          <dt>Credit Card Information</dt>
-          <dd>VISA, 4556208672135430, 6/2027, 713</dd>
-          <dt>Date Of Birth</dt>
-          <dd>31-10-1990</dd>
-        </dl>
-        <button>Order History</button>
-      </div>
-    </article>
+    <div class="user-information-wrapper">
+      <h1>User Information</h1>
+      <dl class="account-details">
+        <dt>Name</dt>
+        <dd>Eden Hazard</dd>
+        <dt>Username</dt>
+        <dd>SkylarSky</dd>
+        <dt>Email-Address</dt>
+        <dd>pixelpenguin47@example.com</dd>
+        <dt>Credit Card Information</dt>
+        <dd>VISA, 4556208672135430, 6/2027, 713</dd>
+        <dt>Date Of Birth</dt>
+        <dd>31-10-1990</dd>
+      </dl>
+      <button>Order History</button>
+    </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
     <script src="https://kit.fontawesome.com/a4720b20e9.js" crossorigin="anonymous"></script>

@@ -298,7 +298,7 @@ dt, dd{
 
 @media(max-width: 1020px){
     .navigation--desktop{
-        display: absolute;
+        position: fixed;
     }
     .navigation--desktop .navigation__links{
         display: none;

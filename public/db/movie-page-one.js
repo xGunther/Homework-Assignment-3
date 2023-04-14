@@ -1,7 +1,6 @@
 const moviePosterIndex = document.getElementsByClassName("movie-card__poster");
 const movieHeaderIndex  = document.getElementsByClassName("movie-card__header");
 const posterArray = Array.from(moviePosterIndex);
-const headerArray = Array.from(movieHeaderIndex);
 
 //Fetching data that has been sent to the movies-page-1 endpoint.
 function fetchMovies() {
@@ -12,6 +11,7 @@ function fetchMovies() {
       for (let i = 0; i < posterArray.length; i++) {
         moviePosterIndex[i].setAttribute("src", data[i].poster);
         moviePosterIndex[i].setAttribute("id", data[i].movie_id);
+        moviePosterIndex[i].setAttribute("alt", "Poster of the movie " + data[i].movie_name);
         movieHeaderIndex[i].textContent = data[i].movie_name;
       }
     })
