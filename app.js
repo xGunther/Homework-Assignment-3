@@ -213,7 +213,6 @@ app.post("/signup", async (req, res) => {
     }
   });
 
-
   const query = `
     INSERT INTO users (full_name, date_of_birth, email_address, username, password)
     VALUES (?, ?, ?, ?, ?)
@@ -227,6 +226,34 @@ app.post("/signup", async (req, res) => {
     }
 
     res.send("User registered");
+    db.close();
+  });
+});
+
+app.post("/order", async (req, res) => {
+  const { ticketAmount, movie} = req.body;
+
+  const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+  });
+  
+  const query = `
+    INSERT INTO orders (ticket_quantity, movie-id)
+    // VALUES (?, ?)
+  `;
+
+  db.run(query, [ticketAmount, movie], function (err) {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Internal server error");
+      return;
+    }
+
+    res.send("Succesfully ordered");
     db.close();
   });
 });

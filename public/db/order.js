@@ -38,3 +38,31 @@ document.addEventListener("DOMContentLoaded", () => {
 movieSelect.addEventListener("change", () => {
   fetchTimes();
 });
+
+document.getElementById("sign-up-wrapper__form").addEventListener("confirm-button", async (event) => {
+  event.preventDefault();
+
+  const ticketAmount = document.getElementById("ticket-quantity").value;
+  const movie = document.getElementById("movie-option").value;
+
+  const data = { ticketAmount, movie };
+
+  try {
+    const response = await fetch("/order", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      alert("Succesfully ordered!");
+      window.location.href = "/dashboard.html";
+    } else {
+      const message = await response.text();
+      alert(message);
+    }
+  } catch (error) {
+    alert("Error: " + error.message);
+  } 
+
+});
