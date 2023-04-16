@@ -153,9 +153,11 @@ app.get("/movie-times", (req, res) => {
 });
 
 
+// POST request to handle user login
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
+  // opens db connection
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
     if (err) {
       console.error(err.message);
@@ -164,6 +166,7 @@ app.post("/login", (req, res) => {
     }
   });
 
+  // query to look for the username from users table
   db.get("SELECT * FROM users WHERE username = ?", [username], async (err, row) => {
     if (err) {
       console.error(err.message);
@@ -171,9 +174,11 @@ app.post("/login", (req, res) => {
       return;
     }
 
+    // if the user is not found or the password is incorrect it will return an error
     if (!row || row.password !== password) {
       res.status(401).send("Incorrect username or password");
     } else {
+      // stores the user information in the session
       req.session.user = {
         id: row.id,
         username: row.username,
@@ -182,14 +187,14 @@ app.post("/login", (req, res) => {
         address: row.address,
         creditCard: row.credit_card,
       };
-      res.send("Logged in");
+      res.redirect("/user-information.html");
     }
-
+    //closes the db connection
     db.close();
   });
 });
 
-
+// GET request to handle user logout
 app.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -201,10 +206,11 @@ app.get("/logout", (req, res) => {
   });
 });
 
-
+// POST request to handle user signup
 app.post("/signup", async (req, res) => {
   const { name, dateOfBirth, email, username, password } = req.body;
 
+  // opens a db connection
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
     if (err) {
       console.error(err.message);
@@ -213,12 +219,11 @@ app.post("/signup", async (req, res) => {
     }
   });
 
-
+  // inserts the new user into the database
   const query = `
     INSERT INTO users (full_name, date_of_birth, email_address, username, password)
     VALUES (?, ?, ?, ?, ?)
   `;
-
   db.run(query, [name, dateOfBirth, email, username, password], function (err) {
     if (err) {
       console.error(err.message);
@@ -226,10 +231,21 @@ app.post("/signup", async (req, res) => {
       return;
     }
 
-    res.send("User registered");
+    // redirects to the login page 
+    res.redirect("/login.html?registered=true");
+    //closes the db connection
     db.close();
   });
 });
+
+// function to check if the user is logged in
+function isAuthenticated(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    res.status(401).send("Unauthorized");
+  }
+}
 
 //making sure that the app is listening to our port(8058).
 app.listen(port, () => {

@@ -6,23 +6,24 @@ document.querySelector(".login-wrapper__form").addEventListener("submit", async 
   
     const data = { username, password };
   
-    try {
+    //sends a POST request with the user credentials and will check if its good
+    try { 
       const response = await fetch("/login", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       });
-  
+      //if its good the user will be directed to the user-information page
       if (response.ok) {
         alert("Logged in!");
-        window.location.href = "/dashboard.html"; // redirects to x page after succesfull login
-      } else {
+        window.location.href = "/user-information.html"; 
         const message = await response.text();
         alert(message);
-      }
+      } // otherwise an error will be displayed
     } catch (error) {
       alert("Error: " + error.message);
     }
 
+    
   });
   

@@ -9,20 +9,21 @@ document.querySelector(".sign-up-wrapper__form").addEventListener("submit", asyn
 
   const data = { name, dateOfBirth, email, username, password };
 
-  try {
+  //sends a POST request with the user data and will check if its ok
+  try { 
     const response = await fetch("/signup", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
-
+    // if the response is ok then the user will be redirected to the login page
     if (response.ok) {
       alert("User registered!");
-      window.location.href = "/dashboard.html";
+      window.location.href = "/login.html";
     } else {
       const message = await response.text();
       alert(message);
-    }
+    } // otherwise an error will be displayed
   } catch (error) {
     alert("Error: " + error.message);
   } 
