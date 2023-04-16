@@ -203,7 +203,7 @@ app.get("/logout", (req, res) => {
 
 // POST request to handle user signup
 app.post("/signup", async (req, res) => {
-  const { name, dateOfBirth, email, username, password } = req.body;
+  const { name, dateOfBirth, email, username, password, creditCard } = req.body;
 
   // opens a db connection
   const db = new sqlite3.Database("public/db/movie_theater.sqlite", (err) => {
@@ -216,10 +216,10 @@ app.post("/signup", async (req, res) => {
 
   // inserts the new user into the database
   const query = `
-    INSERT INTO users (full_name, date_of_birth, email_address, username, password)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO users (full_name, date_of_birth, email_address, username, password, credit_card)
+    VALUES (?, ?, ?, ?, ?, ?)
   `;
-  db.run(query, [name, dateOfBirth, email, username, password], function (err) {
+  db.run(query, [name, dateOfBirth, email, username, password, creditCard], function (err) {
     if (err) {
       console.error(err.message);
       res.status(500).send("Internal server error");
@@ -232,6 +232,7 @@ app.post("/signup", async (req, res) => {
     db.close();
   });
 });
+
 
 // function to check if the user is logged in
 function isAuthenticated(req, res, next) {

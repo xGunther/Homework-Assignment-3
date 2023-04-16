@@ -5,6 +5,7 @@ document.querySelector(".sign-up-wrapper__form").addEventListener("submit", asyn
   const name = document.getElementById("signup-name").value;
   const dateOfBirth = document.getElementById("signup-date-of-birth").value;
   const email = document.getElementById("signup-email").value;
+  const creditCard = document.getElementById("signup-credit-card").value;
   const username = document.getElementById("signup-username").value;
   const password = document.getElementById("signup-password").value;
 
