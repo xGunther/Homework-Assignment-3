@@ -13,7 +13,7 @@ Registered users:
 4. username: ElectricEmu
    password: fC6#bPd5
 5. username: BubbleBee
-   password: hG2$xN9
+   password: G1%312HD!
 
 We used the following statements to create our sqlite database:
 
@@ -47,7 +47,6 @@ We used the following statements to create our sqlite database:
     user_id INTEGER NOT NULL,
     movie_id INTEGER NOT NULL,
     ticket_quantity INTEGER NOT NULL,
-    total_cost INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(user_id),
     FOREIGN KEY(movie_id) REFERENCES movies(movie_id)
     );
