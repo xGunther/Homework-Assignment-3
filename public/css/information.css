@@ -187,6 +187,10 @@ body {
     margin-bottom: 4em;
 }
 
+.user-information-wrapper h1{
+    text-align: center;
+}
+
 .account-details{
     display: grid;
     gap: 1rem;
@@ -240,6 +244,9 @@ dd{
     }
     .navigation--desktop .navigation__list-item{
         display: none;
+    }
+    .user-information-wrapper{
+        width: 15em;
     }
 }
 
