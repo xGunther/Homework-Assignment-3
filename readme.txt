@@ -1,7 +1,21 @@
 Group: Group 58
 Authors: Kevin Hu(7548680), Ingmar janson(0010499), Gun Chen(2818531) 
 Link to webpage: http://webtech.science.uu.nl/group58/
-Website and file structure explanation:
+Website explanation:
+The user starts at the index.html page where you can view the movies that are being played at our movie theater, when hovering over the 
+movie posters you will see the headings with the movie name. On mobile this header and a blur effect is not visible as we made a different design for mobile.
+From this index page you can login or go to the second page of movies. If you want to login you can enter your username and password. If you don't have an account you can choose to signup.
+After signing up you should be redirected to the login page. After loging in you are redirected to the user information page, which does not display something at this moment. When clicking on
+a movie on the index.html page you are being sent to the movie description of that page where you can see the name, trailer, description and credits. Furthermore you can click on buy tickets.
+Now that you're at the order page you can select a movie, ticket quantity, date and time. This page sadly doesn't work, but the rendering of the times out of the database does.
+
+File structure explanation:
+The application consists of a few folders. Firstly we have the html folder, where all the html files are located. Secondly we have the public folder. The JS, DB, CSS and images files are located in this folder.
+Lastly we have the app.js, this js file holds all the funtionality for the serverside of our application.
+
+Database explanation:
+Our database consists of three tables: the movies table, the users table and the orders table. The columns that have been used can be seen at the bottom of the file. 
+
 
 Registered users:
 1. username: CosmicCharm 
