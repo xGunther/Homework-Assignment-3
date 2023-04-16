@@ -1,3 +1,4 @@
+//this file will handle a correct or incorrect signup attempt
 document.querySelector(".sign-up-wrapper__form").addEventListener("submit", async (event) => {
   event.preventDefault();
 

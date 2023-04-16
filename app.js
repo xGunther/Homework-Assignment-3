@@ -22,11 +22,6 @@ app.use(
 //making a logger that will log the req method, req url, status, content-length, res time and date.
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms :date[web]"));
 
-//loading the index.html file as the home url.
-app.get("/html", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
-
 //loading the static files.
 app.use(express.static("index.html"));
 app.use(express.static("html"));
@@ -180,11 +175,11 @@ app.post("/login", (req, res) => {
     } else {
       // stores the user information in the session
       req.session.user = {
-        id: row.id,
+        id: row.user_id,
         username: row.username,
-        email: row.email,
-        name: row.name,
-        address: row.address,
+        email: row.email_address,
+        name: row.full_name,
+        dateOfBirth: row.date_of_birth,
         creditCard: row.credit_card,
       };
       res.redirect("/user-information.html");

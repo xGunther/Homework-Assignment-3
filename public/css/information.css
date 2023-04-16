@@ -1,3 +1,4 @@
+/*this css file is used for the user information page*/
 *{
     margin: 0;
     padding: 0;
@@ -115,6 +116,7 @@ body {
 .login-link{
     border: 2px solid white;
     border-radius: .5em;
+    margin-left: 3em;
 }
 .navigation__links, .login-link{
     color: white;
@@ -187,6 +189,10 @@ body {
     margin-bottom: 4em;
 }
 
+.user-information-wrapper h1{
+    text-align: center;
+}
+
 .account-details{
     display: grid;
     gap: 1rem;
@@ -240,6 +246,9 @@ dd{
     }
     .navigation--desktop .navigation__list-item{
         display: none;
+    }
+    .user-information-wrapper{
+        width: 15em;
     }
 }
 

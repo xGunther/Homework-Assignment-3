@@ -1,3 +1,4 @@
+//this file handles the orders by displaying all the movies and their corresponding times
 const movieOptionIndex = document.getElementsByClassName("movie-option");
 const movieTimeOne = document.getElementById("movie-time-one");
 const movieTimeTwo = document.getElementById("movie-time-two");
@@ -31,10 +32,11 @@ function fetchTimes(){
     console.error(error);
   });
 }
+//fetching movie names
 document.addEventListener("DOMContentLoaded", () => {
   fetchMovies();
 });
-
+//fetching movie times
 movieSelect.addEventListener("change", () => {
   fetchTimes();
 });

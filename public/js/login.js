@@ -1,3 +1,4 @@
+//this file will handle a correct or incorrect login attempt
 document.querySelector(".login-wrapper__form").addEventListener("submit", async (event) => {
     event.preventDefault();
   

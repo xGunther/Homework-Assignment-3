@@ -1,3 +1,4 @@
+//this file handles events for the main movie pages and general elements, like the hamburger menu
 const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 const mobileNavigation = document.getElementsByClassName("navigation--mobile")[0];
 const moviePoster = document.getElementsByClassName("movie-card__poster");

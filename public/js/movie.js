@@ -1,3 +1,4 @@
+//this file handles the movie description page where the movie information can be seen. It displays the name, trailer, description and credits.
 let movieIdPlusOne;
 let i;
 let movieId = new URL(window.location).searchParams.get("id");
@@ -84,6 +85,7 @@ function fetchMovieDescriptions() {
         });
             
 }
+//fetching movie descriptions
 document.addEventListener("DOMContentLoaded", () => {
         fetchMovieDescriptions();
 });

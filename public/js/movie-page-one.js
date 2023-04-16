@@ -1,3 +1,4 @@
+//this file handles the generation of the posters (images) and headers on the first index page
 const moviePosterIndex = document.getElementsByClassName("movie-card__poster");
 const movieHeaderIndex  = document.getElementsByClassName("movie-card__header");
 const posterArray = Array.from(moviePosterIndex);
@@ -20,6 +21,7 @@ function fetchMovies() {
     });
 }
 
+//fetching movies 
 document.addEventListener("DOMContentLoaded", () => {
   fetchMovies();
 });
