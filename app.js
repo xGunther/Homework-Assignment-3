@@ -182,7 +182,7 @@ app.post("/login", (req, res) => {
         address: row.address,
         creditCard: row.credit_card,
       };
-      res.send("Logged in");
+      res.redirect("/user-information.html"); // Redirect to user-information page
     }
 
     db.close();
@@ -226,10 +226,23 @@ app.post("/signup", async (req, res) => {
       return;
     }
 
-    res.send("User registered");
+    res.redirect("/login.html?registered=true");
     db.close();
   });
 });
+
+function isAuthenticated(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    res.status(401).send("Unauthorized");
+  }
+}
+
+app.get("/protected", isAuthenticated, (req, res) => {
+  res.send("This is a protected route");
+});
+
 
 //making sure that the app is listening to our port(8058).
 app.listen(port, () => {

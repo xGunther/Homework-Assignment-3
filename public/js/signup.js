@@ -18,7 +18,7 @@ document.querySelector(".sign-up-wrapper__form").addEventListener("submit", asyn
 
     if (response.ok) {
       alert("User registered!");
-      window.location.href = "/dashboard.html";
+      window.location.href = "/login.html";
     } else {
       const message = await response.text();
       alert(message);
