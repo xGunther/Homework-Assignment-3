@@ -3,7 +3,6 @@ const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 const mobileNavigation = document.getElementsByClassName("navigation--mobile")[0];
 const moviePoster = document.getElementsByClassName("movie-card__poster");
 const movieHeader = document.getElementsByClassName("movie-card__header");
-let i;
 
 //adding classes to the hamburger menu to transform it to a cross when clicked.
 hamburgerMenu.addEventListener("click", () => {
